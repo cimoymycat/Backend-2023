@@ -30,3 +30,16 @@ Route::put('/animals/{id}', [AnimalController::class, 'update']);
 
 # method delete
 Route::delete('/animals/{id}', [AnimalController::class, 'destroy']);
+
+
+
+Route::put('/students/{id}', [Studentcontoroller::class, 'update']);
+public function update(Request $request,id){
+$student = Student::find($id);
+
+if ($student){
+    #menangkap data request
+    $input = [
+        'nama' => $request->nama ?? $student->nama,
+
+    
